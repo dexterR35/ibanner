@@ -1,0 +1,49 @@
+# Dependencies and build output
+node_modules/
+dist/
+public/vendor/
+.vite/
+coverage/
+
+# Browser test output
+/docs/verification/
+test-results/
+test-results-*/
+playwright-report/
+playwright/.cache/
+
+# Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Local uploads
+uploads/
+
+# Downloaded model weights and local model caches
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.gguf
+pytorch_model*.bin
+models/
+checkpoints/
+.cache/

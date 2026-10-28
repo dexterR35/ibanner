@@ -1,0 +1,55 @@
+{
+  "name": "banner-blueprint-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:ui": "vite --host 0.0.0.0",
+    "sam3:serve": "node scripts/python.js -m services.sam3_server",
+    "sam3:download": "node scripts/python.js -m services.download_sam3",
+    "test:sam3": "node scripts/python.js -m unittest discover -s tests/services -v",
+    "ai:setup": "node scripts/ai-setup.js",
+    "ai:doctor": "node scripts/python.js -m services.ai_doctor",
+    "models:download": "node scripts/python.js -m services.download_models",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test",
+    "fixtures:make": "node scripts/python.js scripts/make-fixtures.py",
+    "postinstall": "node scripts/prepare-opencv.js",
+    "schema:document": "node scripts/document-schema.js",
+    "format": "prettier --write src scripts tests vite.config.js playwright.config.js",
+    "qwen:download": "node scripts/python.js -m services.vision.download_qwen",
+    "qwen:check": "node scripts/python.js -m services.vision.check_qwen",
+    "qwen:smoke": "node scripts/python.js -m services.vision.check_qwen --smoke",
+    "florence:download": "node scripts/python.js -m services.vision.download_florence",
+    "florence:check": "node scripts/python.js -m services.vision.check_florence",
+    "florence:smoke": "node scripts/python.js -m services.vision.check_florence --smoke"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource-variable/outfit": "5.3.0",
+    "@techstark/opencv-js": "5.0.0-release.1",
+    "@xyflow/react": "12.12.0",
+    "fflate": "0.8.3",
+    "gifenc": "1.0.3",
+    "idb-keyval": "6.3.0",
+    "konva": "10.7.0",
+    "lucide-react": "1.48.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-konva": "19.3.0",
+    "react-router": "8.4.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "prettier": "3.9.9",
+    "vite": "8.3.1"
+  }
+}

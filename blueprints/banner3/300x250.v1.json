@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "id": "BANNER3-300x250",
+  "marketId": "BANNER3",
+  "name": "300x250",
+  "width": 300,
+  "height": 250,
+  "mode": "static",
+  "repeat": 0,
+  "background": "#170e29",
+  "layers": [
+    {
+      "id": "hero",
+      "name": "hero",
+      "type": "image",
+      "source": "hero",
+      "text": "",
+      "sourcePart": "all",
+      "x": 208,
+      "y": 0,
+      "width": 92,
+      "height": 230,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#ffffff",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 2,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.24,
+      "fadeDirection": "left",
+      "fadeMesh": {
+        "enabled": true,
+        "softness": 0.24,
+        "points": [
+          {
+            "x": 0,
+            "y": 0.12
+          },
+          {
+            "x": 0.06666666666666667,
+            "y": 0.12
+          },
+          {
+            "x": 0.13333333333333333,
+            "y": 0.12
+          },
+          {
+            "x": 0.2,
+            "y": 0.12
+          },
+          {
+            "x": 0.26666666666666666,
+            "y": 0.12
+          },
+          {
+            "x": 0.3333333333333333,
+            "y": 0.12
+          },
+          {
+            "x": 0.4,
+            "y": 0.12
+          },
+          {
+            "x": 0.4666666666666667,
+            "y": 0.12
+          },
+          {
+            "x": 0.5333333333333333,
+            "y": 0.12
+          },
+          {
+            "x": 0.6,
+            "y": 0.12
+          },
+          {
+            "x": 0.6666666666666666,
+            "y": 0.12
+          },
+          {
+            "x": 0.7333333333333333,
+            "y": 0.12
+          },
+          {
+            "x": 0.8,
+            "y": 0.12
+          },
+          {
+            "x": 0.8666666666666667,
+            "y": 0.12
+          },
+          {
+            "x": 0.9333333333333333,
+            "y": 0.12
+          },
+          {
+            "x": 1,
+            "y": 0.12
+          }
+        ]
+      },
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "logo",
+      "name": "Logo",
+      "type": "logo",
+      "source": "logo",
+      "text": "",
+      "sourcePart": "all",
+      "x": 50,
+      "y": 17,
+      "width": 113,
+      "height": 34,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#ffffff",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 2,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "headline",
+      "name": "headline",
+      "type": "text",
+      "source": "headline",
+      "text": "",
+      "sourcePart": "all",
+      "x": 9,
+      "y": 69,
+      "width": 199,
+      "height": 65,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#ffc447",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 2,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "subtitle",
+      "name": "subtitle",
+      "type": "text",
+      "source": "subtitle",
+      "text": "",
+      "sourcePart": "first-line",
+      "x": 12,
+      "y": 139,
+      "width": 191,
+      "height": 20.4,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#9370e9",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 1,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "subtitle-support",
+      "name": "subtitle-support",
+      "type": "text",
+      "source": "subtitle",
+      "text": "",
+      "sourcePart": "remaining-lines",
+      "x": 12,
+      "y": 159.4,
+      "width": 191,
+      "height": 13.600000000000001,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#9370e9",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 1,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "cta",
+      "name": "cta",
+      "type": "button",
+      "source": "cta",
+      "text": "",
+      "sourcePart": "all",
+      "x": 40,
+      "y": 191,
+      "width": 135,
+      "height": 30,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#f6c84e",
+      "textFill": "#080607",
+      "textPaddingX": 16.2,
+      "textPaddingY": 6,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 1,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "manual",
+      "textOverride": null,
+      "fontWeight": "bold",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 30,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    },
+    {
+      "id": "legal",
+      "name": "legal",
+      "type": "text",
+      "source": "legal",
+      "text": "",
+      "sourcePart": "all",
+      "x": 5,
+      "y": 235,
+      "width": 290,
+      "height": 11,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "fill": "#e2dfeb",
+      "textFill": "#ffffff",
+      "textPaddingX": 6,
+      "textPaddingY": 2,
+      "fontSize": 80,
+      "minFontSize": 4,
+      "maxLines": 1,
+      "align": "center",
+      "verticalAlign": "middle",
+      "textFlow": "single-line",
+      "textOverride": null,
+      "fontWeight": "normal",
+      "lineHeight": 1,
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "zoom": 1,
+      "fade": 0.35,
+      "fadeDirection": "top",
+      "radius": 0,
+      "stacked": false,
+      "glow": {
+        "enabled": false,
+        "color": "#ff162d",
+        "blur": 8,
+        "opacity": 0.85
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "part-1",
+      "name": "Artwork",
+      "durationMs": 3000,
+      "transitionMs": 0,
+      "tracks": {
+        "hero": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "logo": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "headline": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "subtitle": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "subtitle-support": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "cta": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "legal": {
+          "visible": true,
+          "startMs": 0,
+          "fadeInMs": 0,
+          "fadeOutMs": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      }
+    }
+  ]
+}

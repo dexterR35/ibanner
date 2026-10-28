@@ -1,0 +1,4 @@
+# PaddleOCR PP-OCRv6 text reading through RapidOCR on ONNX Runtime (CPU).
+# The detection/recognition models ship inside the rapidocr wheel and are hash-checked.
+rapidocr==3.10.0
+onnxruntime==1.31.1

@@ -1,0 +1,727 @@
+/* Studio's controls and artwork share a single workspace, separate from reference cards. */
+.campaign-layout.studio-artboard-page {
+  height: calc(100dvh - 76px);
+  align-items: stretch;
+}
+.studio-artboard-page > .workspace-content {
+  padding: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.studio-artboard-page > .campaign-panel {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.studio-toolbar {
+  flex: none;
+  padding: 18px 24px 14px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.studio-toolbar .format-search {
+  width: 100%;
+  max-width: 190px;
+}
+.canvas-floating-actions {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: max-content;
+  max-width: calc(100% - 32px);
+}
+.canvas-campaign-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.canvas-campaign-actions .match-blueprints-action,
+.canvas-campaign-actions .image-fade-action,
+.canvas-campaign-actions .arrange-now-action {
+  font-size: 11px;
+  box-shadow: 0 4px 18px #0005;
+}
+.canvas-floating-actions .auto-subject-action {
+  white-space: nowrap;
+  font-size: 11px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 18px #0005;
+}
+.studio-toolbar-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+.studio-toolbar-filters > button {
+  font-size: 11px;
+}
+.studio-subject-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+.studio-subject-status.field-error {
+  color: var(--amber);
+}
+.studio-subject-status button {
+  flex: none;
+  font-size: 11px;
+}
+.campaign-fields {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.campaign-fields:disabled {
+  opacity: 0.6;
+}
+.studio-artboard-surface {
+  container: studio-canvas / inline-size;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  padding: 0;
+  touch-action: none;
+  user-select: none;
+  background-color: #0e1011;
+  background-image: radial-gradient(#ffffff12 0.8px, transparent 0.8px);
+  background-size: 20px 20px;
+}
+.banner-grid.artboard-grid {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+.artboard-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+}
+.artboard-overlay > * {
+  pointer-events: auto;
+}
+.studio-artboard-surface:has(.subject-placement-status.is-loading) .artboard-grid {
+  opacity: 0.45;
+}
+.artboard-position {
+  position: absolute;
+}
+.studio-artboard-surface.hand-tool,
+.studio-artboard-surface.hand-tool button {
+  cursor: grab;
+}
+.studio-artboard-surface.is-panning,
+.studio-artboard-surface.is-panning button {
+  cursor: grabbing;
+}
+.studio-artboard-surface [data-canvas-overlay] button {
+  cursor: pointer;
+}
+.studio-artboard-surface [data-canvas-overlay] button:disabled {
+  cursor: default;
+}
+.studio-artboard-surface .format-empty {
+  margin: 32px;
+}
+.artboard-grid .banner-artboard {
+  width: max(160px, var(--artboard-width));
+  max-width: 100%;
+  flex: none;
+  align-items: center;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.artboard-heading {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+  color: var(--secondary-text);
+}
+.artboard-heading strong {
+  font-size: calc(11px / var(--artboard-label-scale, 1));
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.artboard-heading strong span {
+  margin-inline: 3px;
+  color: var(--muted);
+}
+.artboard-actions,
+.artboard-gif {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.artboard-actions {
+  flex: none;
+}
+.artboard-actions .icon-button {
+  pointer-events: auto;
+  padding: 3px;
+}
+.artboard-actions svg {
+  width: calc(13px / var(--artboard-label-scale, 1));
+  height: calc(13px / var(--artboard-label-scale, 1));
+}
+.artboard-gif {
+  font-size: calc(9px / var(--artboard-label-scale, 1));
+  color: var(--muted);
+}
+.artboard-preview {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: var(--artboard-width);
+  max-width: 100%;
+  aspect-ratio: var(--artboard-ratio);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #080a10;
+  box-shadow: 0 8px 22px #0005;
+  outline: 1px solid #ffffff12;
+  cursor: pointer;
+}
+.artboard-preview > canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.artboard-preview:hover,
+.artboard-preview:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+  filter: none;
+}
+.artboard-edit {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 7px;
+  font-size: 10px;
+  white-space: nowrap;
+  background: #16181bef;
+  border: 1px solid var(--accent-line);
+  border-radius: 5px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.artboard-preview:hover .artboard-edit,
+.artboard-preview:focus-visible .artboard-edit {
+  opacity: 1;
+}
+.studio-artboard-page .workspace-footer {
+  flex: none;
+  margin: 0;
+  padding: 10px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 10px;
+}
+.studio-artboard-page .studio-canvas-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+}
+.canvas-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.canvas-controls .icon-button {
+  padding: 7px;
+}
+.canvas-controls [aria-pressed='true'] {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+.canvas-controls .zoom-value {
+  width: 45px;
+  padding: 7px 2px;
+  color: var(--text);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.canvas-control-divider {
+  width: 1px;
+  height: 16px;
+  margin-inline: 5px;
+  background: var(--line-strong);
+}
+.canvas-help {
+  color: var(--muted);
+}
+.studio-canvas-footer .canvas-review {
+  margin-left: auto;
+  font-size: 10px;
+}
+@media (max-width: 1100px) {
+  .studio-toolbar {
+    padding: 16px;
+  }
+  .canvas-help {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .campaign-layout.studio-artboard-page {
+    height: auto;
+  }
+  .studio-artboard-page > .workspace-content {
+    height: calc(100dvh - 64px);
+    min-height: 540px;
+  }
+  .studio-artboard-page > .campaign-panel {
+    overflow: visible;
+  }
+  .studio-artboard-page .workspace-footer {
+    padding-inline: 16px;
+  }
+}
+
+/* The tools and selection inspector stay fixed while the artboards move beneath them. */
+.canvas-tool-rail {
+  position: absolute;
+  z-index: 6;
+  left: 12px;
+  top: var(--canvas-controls-top, 80px);
+  padding: 5px;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px #0005;
+}
+.canvas-tool-rail .canvas-controls {
+  flex-direction: column;
+  gap: 4px;
+}
+.canvas-tool-rail .canvas-control-divider {
+  width: 24px;
+  height: 1px;
+  margin: 3px 0;
+}
+.canvas-tool-rail .zoom-value {
+  width: 32px;
+  font-size: 10px;
+}
+.studio-properties {
+  position: absolute;
+  z-index: 5;
+  left: 64px;
+  top: var(--canvas-controls-top, 80px);
+  bottom: 16px;
+  width: 280px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  user-select: text;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: 0 10px 36px #0006;
+}
+.studio-selection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 14px 8px;
+}
+.studio-selection-heading strong {
+  display: block;
+  font-size: 13px;
+}
+.studio-selection-heading small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 5px;
+}
+.studio-selection-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.studio-selection-tools > :last-child {
+  margin-left: auto;
+  font-size: 10px;
+}
+.studio-selection-fields {
+  min-width: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.studio-selection-fields:disabled {
+  opacity: 0.5;
+}
+.studio-layer-list > summary {
+  padding: 12px 16px;
+  font-size: 11px;
+  color: var(--secondary-text);
+  cursor: pointer;
+}
+.studio-properties .layer-panel,
+.studio-properties .inspector {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  border: 0;
+  padding: 12px 16px;
+}
+.studio-properties .layer-panel {
+  padding-top: 0;
+}
+.studio-properties .layer-panel > .panel-title {
+  display: none;
+}
+.studio-properties .layer-row {
+  min-height: 32px;
+}
+.studio-properties .layer-row button {
+  padding-block: 7px;
+}
+.studio-properties .layer-panel .field {
+  margin-top: 12px;
+}
+.studio-properties .layer-actions {
+  margin-block: 12px;
+}
+.studio-properties .inspector {
+  border-top: 1px solid var(--line);
+}
+.studio-properties .error {
+  margin: 12px;
+  font-size: 11px;
+}
+.artboard-position.is-selected {
+  z-index: 1;
+}
+.selected-artboard-preview {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+.editor-canvas-area.inline-canvas-editor {
+  flex: none;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
+  touch-action: none;
+}
+.inline-canvas-editor .editor-artwork {
+  box-shadow: none;
+}
+.studio-inline-timeline:empty {
+  display: none;
+}
+.studio-inline-timeline {
+  flex: none;
+  min-width: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.studio-inline-timeline .timeline {
+  width: 100%;
+  min-width: 0;
+}
+@container studio-canvas (max-width: 599px) {
+  .studio-properties {
+    top: auto;
+    bottom: 12px;
+    left: 64px;
+    right: 12px;
+    width: auto;
+    height: min(42cqh, 360px);
+    max-height: 42%;
+  }
+}
+@media (max-width: 1100px) {
+  .studio-artboard-page:has(.studio-properties) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .studio-artboard-page:has(.studio-properties) > .campaign-panel {
+    display: none;
+  }
+}
+.studio-selection-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+}
+.layer-asset-preview {
+  margin: 0 0 16px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.layer-asset-preview canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.layer-asset-preview figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.artboard-move-handle {
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: calc(11px / var(--artboard-label-scale, 1));
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--secondary-text);
+  pointer-events: auto;
+  cursor: grab;
+  padding: 0;
+}
+.artboard-move-handle:active {
+  cursor: grabbing;
+}
+.artboard-move-handle span {
+  color: var(--muted);
+  margin-inline: 3px;
+}
+.artboard-heading.is-tight {
+  gap: 4px;
+}
+.artboard-heading.is-tight .artboard-move-handle span {
+  margin-inline: 0;
+}
+.artboard-heading.is-tight .artboard-actions {
+  gap: 2px;
+}
+.fade-mesh-controls {
+  margin-bottom: 16px;
+}
+.fade-presets {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.fade-presets button {
+  flex: 1;
+  padding: 7px 5px;
+  font-size: 11px;
+}
+.blueprint-fade-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 260px);
+  gap: 24px;
+  align-items: start;
+  margin-block: 20px;
+}
+.blueprint-fade-editor .blueprint-diagram {
+  width: 100%;
+  height: 360px;
+  max-height: 50vh;
+}
+.fade-mesh-diagram circle:focus-visible {
+  stroke: white;
+  stroke-width: 3px;
+  outline: none;
+}
+@media (max-width: 650px) {
+  .blueprint-fade-editor {
+    grid-template-columns: 1fr;
+  }
+  .blueprint-fade-editor .blueprint-diagram {
+    height: 220px;
+  }
+}
+
+.canvas-campaign-actions .match-blueprints-action[aria-pressed='true'],
+.canvas-campaign-actions .image-fade-action[aria-pressed='true'],
+.canvas-campaign-actions .arrange-now-action[aria-pressed='true'] {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.artboard-grid .gif-artboard-group {
+  outline: 1px solid var(--line-strong);
+  outline-offset: 12px;
+  border-radius: 4px;
+}
+.artboard-grid .gif-artboard-group.is-selected {
+  outline-color: var(--accent);
+}
+.gif-parts {
+  width: var(--artboard-width);
+}
+.gif-part {
+  margin-top: 20px;
+}
+.gif-part-heading {
+  height: 28px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--secondary-text);
+  font-size: calc(10px / var(--artboard-label-scale, 1));
+}
+.gif-part-heading > :first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gif-part-heading > :last-child {
+  flex: none;
+  color: var(--muted);
+}
+
+/* What automatic arrangement did, per artboard and for the whole market. */
+.artboard-automation {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: calc(9px / var(--artboard-label-scale, 1));
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--muted);
+  pointer-events: auto;
+  cursor: help;
+}
+.artboard-automation.is-design {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 40%, var(--panel));
+}
+.artboard-automation.is-reflow,
+.artboard-automation.is-fixed {
+  color: var(--secondary-text);
+}
+.artboard-automation.is-photo,
+.artboard-automation.is-stale {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 40%, var(--panel));
+}
+.artboard-automation.is-pending {
+  color: var(--accent);
+  border-color: var(--accent-line);
+}
+.canvas-campaign-actions .automation-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  box-shadow: 0 4px 18px #0005;
+  font-size: 11px;
+  color: var(--secondary-text);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.canvas-campaign-actions .automation-status.is-ready {
+  color: var(--green);
+}
+.canvas-campaign-actions .automation-status.is-stale {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 40%, var(--panel));
+}
+.canvas-campaign-actions .automation-status.is-busy {
+  color: var(--accent);
+  border-color: var(--accent-line);
+}
+.artboard-automation.is-compact .artboard-automation-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.artboard-automation.is-compact {
+  position: relative;
+  width: calc(8px / var(--artboard-label-scale, 1));
+  height: calc(8px / var(--artboard-label-scale, 1));
+  padding: 0;
+  border: 0;
+  background: currentColor;
+}
+.artboard-automation.is-compact.is-reflow,
+.artboard-automation.is-compact.is-fixed {
+  background: var(--secondary-text);
+}
+
+/* Hold-to-compare: artboards temporarily show the saved design instead of the arrangement. */
+.artboard-compare {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: calc(9px / var(--artboard-label-scale, 1));
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.banner-artboard.is-comparing .artboard-preview {
+  outline: calc(2px / var(--artboard-label-scale, 1)) solid var(--accent);
+  outline-offset: calc(2px / var(--artboard-label-scale, 1));
+}
+.canvas-campaign-actions .automation-status.is-compare {
+  color: var(--accent);
+  border-color: var(--accent-line);
+}
+.canvas-campaign-actions .compare-action {
+  touch-action: none;
+  user-select: none;
+}

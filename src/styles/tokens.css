@@ -1,0 +1,23 @@
+:root {
+  font-family: 'DM Sans Variable', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  --bg: #0c0d0f;
+  --panel: #131416;
+  --raised: #1b1d20;
+  --line: #2a2c30;
+  --line-strong: #3b3e43;
+  --muted: #969a9f;
+  --secondary-text: #bdc0c4;
+  --text: #f0f0ec;
+  --accent: #08cd57;
+  --accent-bg: color-mix(in srgb, var(--accent) 9%, var(--panel));
+  --accent-line: color-mix(in srgb, var(--accent) 32%, var(--panel));
+  --on-accent: #1a1a1a;
+  --green: #8fcbb6;
+  --amber: #eac184;
+  --danger: #ffa3a3;
+  color-scheme: dark;
+  font-size: 13px;
+}

@@ -1,0 +1,59 @@
+{
+  "$comment": "Sole planner: pinned Qwen3-VL 8B Instruct. Precision selection never changes the checkpoint or parameter count. No smaller-model fallback or automatic download.",
+  "default": "qwen3-vl-8b",
+  "variants": {
+    "qwen3-vl-8b": {
+      "label": "Qwen3-VL 8B Instruct",
+      "repo": "Qwen/Qwen3-VL-8B-Instruct",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "modelType": "qwen3_vl",
+      "loader": "Qwen3VLForConditionalGeneration",
+      "hiddenSize": 4096,
+      "weightsGB": 17.53,
+      "license": "Apache-2.0",
+      "processorFiles": [
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "preprocessor_config.json",
+        "chat_template.json"
+      ],
+      "processorOptions": {
+        "size": {
+          "shortest_edge": 65536,
+          "longest_edge": 262144
+        }
+      },
+      "budgets": {
+        "cuda": {
+          "minimumRAMGiB": 22,
+          "availableRAMGiB": 8,
+          "minimumVRAMGiB": 22,
+          "availableVRAMGiB": 19,
+          "recommended": "32 GB RAM and a 24 GB CUDA GPU"
+        },
+        "cpu": {
+          "minimumRAMGiB": 46,
+          "availableRAMGiB": 40,
+          "minimumVRAMGiB": 0,
+          "availableVRAMGiB": 0,
+          "recommended": "48 GB RAM minimum; 64 GB recommended"
+        }
+      },
+      "quantizedCudaBudget": {
+        "minimumRAMGiB": 14,
+        "availableRAMGiB": 6,
+        "minimumVRAMGiB": 11,
+        "availableVRAMGiB": 9,
+        "recommended": "16 GB RAM and a 12 GB CUDA GPU using NF4 4-bit weights"
+      },
+      "quantization": {
+        "method": "bitsandbytes-nf4",
+        "version": "0.50.2",
+        "skipModules": [
+          "lm_head",
+          "model.visual"
+        ]
+      }
+    }
+  }
+}

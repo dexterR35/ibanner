@@ -1,0 +1,6 @@
+-r requirements-transformers.txt
+-r requirements-ocr.txt
+# BiRefNet custom model code (cut-out and background removal).
+timm==1.0.30
+kornia==0.8.3
+einops==0.8.2

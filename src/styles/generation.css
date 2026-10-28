@@ -1,0 +1,1267 @@
+.generation-options {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.generation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+  gap: 16px;
+}
+.intelligence-card {
+  border: 1px solid #34373d;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 0;
+  background: #202329;
+}
+.intelligence-card img {
+  max-height: 160px;
+  width: 100%;
+  object-fit: contain;
+  background: #15181d;
+  border-radius: 8px;
+}
+.intelligence-card .field {
+  margin: 10px 0;
+}
+.intelligence-card p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #aeb1ba;
+}
+.intelligence-card h3 {
+  overflow-wrap: anywhere;
+}
+.intelligence-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.intelligence-toolbar .field {
+  flex: 1;
+  min-width: 180px;
+}
+@media (max-width: 1150px) {
+  .generation-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .generation-form section {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 700px) {
+  .generation-form {
+    grid-template-columns: 1fr;
+  }
+  .generation-form section {
+    grid-column: auto;
+  }
+  .generation-options {
+    grid-template-columns: 1fr;
+  }
+  .generation-results {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.automation-panel {
+  border-top: 1px solid #34373d;
+  padding-top: 16px;
+  margin-top: 18px;
+}
+.automation-block {
+  padding: 12px 0;
+}
+.automation-title,
+.tool-row,
+.suggestion-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.automation-title span {
+  margin-left: auto;
+  font-size: 11px;
+  color: #aeb1ba;
+}
+.automation-panel p {
+  font-size: 11px;
+  color: #aeb1ba;
+  line-height: 1.6;
+}
+.palette-swatches {
+  display: flex;
+  height: 22px;
+  gap: 3px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.suggestion-row i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.generation-locks {
+  padding: 8px 0;
+}
+.generation-locks summary {
+  font-size: 12px;
+  cursor: pointer;
+}
+.generation-locks .check {
+  margin: 5px 0;
+}
+
+.library-import {
+  display: inline-flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 14px 18px;
+  border: 1px dashed #586742;
+  border-radius: 8px;
+  margin: 8px 12px 16px 0;
+  background: #1a2219;
+}
+.library-import:hover {
+  border-color: #d1fe17;
+}
+
+/* Connected Create workspace */
+.create-flow-page {
+  display: block;
+  min-width: 0;
+  padding: 0;
+}
+.create-market-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.create-market-picker select {
+  min-width: 130px;
+  padding: 9px 26px 9px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  background: var(--raised);
+  color: var(--text);
+}
+.create-graph-canvas {
+  height: calc(100vh - 76px);
+  min-height: 520px;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  background: #0d1011;
+}
+.create-graph-toolbar {
+  position: absolute;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  padding: 9px;
+  border: 1px solid #3d5145;
+  border-radius: 10px;
+  background: #111b16e8;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.create-graph-toolbar .create-market-picker {
+  margin: 0;
+  flex: none;
+}
+.create-graph-toolbar .button {
+  flex: none;
+}
+.create-add-node-select {
+  width: auto;
+  min-height: 35px;
+  flex: none;
+  padding: 5px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--raised);
+  color: var(--text);
+  font: inherit;
+}
+.create-graph-status {
+  position: absolute;
+  z-index: 10;
+  right: 12px;
+  bottom: 12px;
+  max-width: min(50%, 440px);
+  padding: 7px 10px;
+  border: 1px solid #3d5145;
+  border-radius: 7px;
+  background: #111b16e8;
+  color: #c7e4ce;
+  font-size: 11px;
+  pointer-events: none;
+}
+.create-graph-mobile-hint {
+  display: none;
+}
+.create-graph-canvas .react-flow {
+  --xy-background-color: #0d1011;
+  --xy-node-color: var(--text);
+  --xy-edge-stroke-default: #668175;
+  --xy-edge-stroke-selected-default: #d1fe17;
+  --xy-controls-button-background-color: #202724;
+  --xy-controls-button-color: #eaf2e7;
+  --xy-controls-button-border-color: #404b42;
+}
+.create-graph-canvas .react-flow__node-create {
+  cursor: grab;
+}
+.create-graph-canvas .react-flow__node-create.selected .create-node {
+  border-color: #d1fe17;
+  box-shadow:
+    0 0 0 1px #d1fe17,
+    0 12px 30px #0008;
+}
+.create-graph-canvas .react-flow__node-create:active {
+  cursor: grabbing;
+}
+.create-graph-canvas .react-flow__minimap {
+  width: 120px;
+  height: 90px;
+  left: 50px;
+  right: auto;
+  bottom: 10px;
+}
+.create-node {
+  height: 100%;
+  min-height: 143px;
+  position: relative;
+  border: 1px solid #47534d;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #252d2a, #1b2220 62%, #161d1b);
+  padding: 12px 17px;
+  box-shadow: 0 12px 28px #0008;
+  overflow: visible;
+  color: var(--text);
+}
+.create-node-content {
+  height: calc(100% - 70px);
+  margin-top: 7px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #456b50 transparent;
+}
+.create-node-planner {
+  border-color: #657844;
+  background: linear-gradient(145deg, #30371e, #22291d 65%, #191f19);
+}
+.create-blueprint-review {
+  margin-top: 10px;
+  border-top: 1px solid #6d805b;
+  padding-top: 8px;
+}
+.create-blueprint-review label {
+  display: grid;
+  gap: 4px;
+  color: #dce9d8;
+  font-size: 11px;
+}
+.create-blueprint-review select {
+  width: 100%;
+  background: #17221c;
+  color: #f2f4ed;
+  border: 1px solid #647962;
+  border-radius: 5px;
+  padding: 4px;
+}
+.create-blueprint-review small {
+  display: block;
+  margin: 6px 0;
+  font-size: 10px;
+}
+.create-blueprint-comparison {
+  display: flex;
+  gap: 6px;
+  align-items: start;
+}
+.create-blueprint-map {
+  flex: 1;
+  min-width: 0;
+  color: #dce9d8;
+  font-size: 10px;
+}
+.create-blueprint-map span {
+  display: block;
+  margin-bottom: 4px;
+}
+.create-blueprint-map svg {
+  display: block;
+  width: 100%;
+  height: 140px;
+  background: #111827;
+  border: 1px solid #627366;
+  border-radius: 5px;
+}
+.create-blueprint-empty {
+  color: #b9c8bd;
+  font-size: 10px;
+}
+.create-node-output {
+  border-color: #527871;
+  background: linear-gradient(145deg, #273b37, #1c2927 65%, #151e1d);
+}
+.create-node-running {
+  box-shadow:
+    0 0 0 2px #d1fe1760,
+    0 12px 28px #0008;
+}
+.create-node-queued {
+  border-color: #d1fe17;
+  box-shadow:
+    0 0 0 1px #d1fe1760,
+    0 12px 28px #0008;
+}
+.create-node-succeeded {
+  border-color: #08cd57;
+}
+.create-node-in-studio {
+  border-color: #d1fe17;
+}
+.create-node-blocked,
+.create-node-failed,
+.create-node-stale {
+  border-color: #eac184;
+}
+.create-node header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.create-node header strong {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.create-node-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  color: #d1fe17;
+  background: #d1fe1718;
+}
+.create-node-tag {
+  margin-left: auto;
+  color: #a9beb1;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.create-node p,
+.create-node small,
+.create-node-copy {
+  display: block;
+  margin: 13px 0 2px;
+  color: #c2d0c9;
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.create-node-copy strong,
+.create-node-copy span {
+  display: block;
+}
+.create-node-copy strong {
+  color: #f2f4ed;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.create-node-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  color: #c2d0c9;
+  font-size: 11px;
+}
+.create-node-body canvas {
+  width: 54px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #728478;
+}
+.create-node-upload {
+  display: block;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 3px 5px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+  font-size: 9px;
+}
+.create-node-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.create-node-input,
+.create-node-output-settings select,
+.create-node-compose-settings input[type='number'] {
+  border: 1px solid #52635b;
+  border-radius: 5px;
+  background: #121a17;
+  color: #eff5ed;
+  font: inherit;
+}
+.create-node-input {
+  width: 100%;
+  padding: 5px 6px;
+  font-size: 10px;
+}
+.create-node-field {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 5px;
+  color: #b6d0bc;
+  font-size: 9px;
+  text-transform: capitalize;
+}
+.create-node-copy {
+  margin: 0;
+}
+.create-node-variants {
+  display: grid;
+  gap: 5px;
+  padding: 5px 0;
+}
+.create-node-batch-actions {
+  display: grid;
+  gap: 5px;
+}
+.create-node-batch-actions .create-node-action,
+.create-node-compose-settings > .create-node-action {
+  width: 100%;
+}
+.create-node-evidence {
+  margin-top: 6px;
+  color: #c2d0c9;
+  font-size: 10px;
+}
+.create-node-evidence summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+.create-node-evidence p {
+  font-size: 10px;
+}
+.create-node-evidence pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 9px;
+}
+.create-node-toggle,
+.create-node-compose-settings {
+  display: grid;
+  gap: 7px;
+  margin-top: 13px;
+  color: #c2d0c9;
+  font-size: 10px;
+}
+.create-node-toggle {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+}
+.create-node-toggle input,
+.create-node-compose-settings input[type='checkbox'] {
+  accent-color: #d1fe17;
+}
+.create-node-compose-settings label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.create-node-compose-settings input[type='number'] {
+  width: 47px;
+  padding: 2px 4px;
+}
+.create-node-output-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 10px;
+}
+.create-node-output-settings select {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 3px;
+  font-size: 10px;
+}
+.create-node-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 5px;
+  color: #c2d0c9;
+  font-size: 10px;
+}
+.create-node-dimensions label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.create-node-dimensions input {
+  width: 100%;
+  min-width: 0;
+  padding: 3px 4px;
+  border: 1px solid #52635b;
+  border-radius: 5px;
+  background: #121a17;
+  color: #eff5ed;
+  font-size: 10px;
+}
+.create-node-output .create-node-preview {
+  height: 58px;
+  margin-top: 7px;
+}
+.create-node-output .create-node-preview canvas {
+  max-height: 56px;
+}
+.create-node-decision {
+  margin-top: 5px !important;
+  font-size: 10px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.create-node-output-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+.create-node-footer {
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  padding-top: 6px;
+  border-top: 1px solid #384a40;
+}
+.create-node-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 23px;
+  padding: 3px 6px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 9px;
+  cursor: pointer;
+}
+.create-node-action:hover:not(:disabled) {
+  border-color: #4bea82;
+  background: #4bea82;
+  color: var(--on-accent);
+}
+.create-node-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.create-node-action-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+}
+.create-node-action-primary:hover:not(:disabled) {
+  color: var(--on-accent);
+  background: #4bea82;
+}
+.create-node-output-actions {
+  flex-wrap: wrap;
+}
+.create-node-output-actions .create-node-action,
+.create-node-footer .create-node-action {
+  flex: 1 1 auto;
+}
+.create-node-port {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 20px;
+  font-size: 9px;
+  color: #a6c6b2;
+  pointer-events: none;
+}
+.create-node-port-in {
+  left: 0;
+  transform: translate(-17px, -50%);
+}
+.create-node-port-in span {
+  margin-left: 16px;
+}
+.create-node-port-out {
+  right: 0;
+  transform: translate(17px, -50%);
+}
+.create-node-port-out span {
+  margin-right: 16px;
+}
+.create-node-port .react-flow__handle {
+  position: relative;
+  transform: none;
+  top: auto;
+  left: auto;
+  right: auto;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #b3e7c7;
+  background: #244437;
+  pointer-events: auto;
+}
+.create-node-port .react-flow__handle:hover {
+  width: 16px;
+  height: 16px;
+  border-color: #d1fe17;
+}
+.create-node-preview {
+  height: 65px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 1px solid #41514c;
+  border-radius: 6px;
+  margin: 9px 0 0;
+  background: #121a19;
+}
+.create-node-preview canvas {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 63px;
+}
+@media (max-width: 700px) {
+  .create-graph-canvas {
+    height: calc(100vh - 64px);
+  }
+  .create-graph-mobile-hint {
+    display: block;
+    position: absolute;
+    top: 66px;
+    bottom: auto;
+    right: 9px;
+    z-index: 11;
+    padding: 5px 7px;
+    border-radius: 5px;
+    background: #1c2724cc;
+    color: #d1fe17;
+    font-size: 10px;
+    pointer-events: none;
+  }
+  .create-graph-toolbar {
+    flex-wrap: nowrap;
+  }
+  .create-market-picker {
+    flex: none;
+  }
+  .create-market-picker select {
+    flex: none;
+  }
+}
+
+/* Copy that does not fit one size: Qwen suggestions approved per size. */
+.create-copy-fit {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 6px;
+  border: 1px solid #3a4446;
+  border-radius: 6px;
+}
+.create-copy-fit-role {
+  display: grid;
+  gap: 4px;
+}
+.create-copy-fit-role p,
+.create-copy-fit-role small {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.35;
+}
+.create-copy-fit-option span {
+  white-space: normal;
+  text-align: left;
+}
+
+/* Full-bleed node map: picture nodes, pinned settings, group frames. */
+.create-graph-canvas .react-flow__node-frame {
+  pointer-events: none;
+}
+.create-graph-canvas .react-flow__selection {
+  border: 1px dashed #d1fe17;
+  background: #d1fe1710;
+}
+.create-frame {
+  width: 100%;
+  height: 100%;
+  border: 1.5px dashed #7f9b8b;
+  border-radius: 22px;
+  background: #ffffff0a;
+}
+.create-frame-selected {
+  border-color: #d1fe17;
+}
+.create-frame-name {
+  pointer-events: auto;
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  padding: 4px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #1b2421;
+  color: #cfe0d4;
+  font: inherit;
+  font-size: 16px;
+  cursor: grab;
+}
+.create-frame-name small {
+  margin-left: 4px;
+  color: #8ea397;
+}
+.create-frame-name:is(input) {
+  width: 180px;
+  border: 1px solid #d1fe17;
+}
+.create-node-visual {
+  padding: 0;
+  overflow: hidden;
+  background: #0b0f0e;
+}
+.create-node-visual header {
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto 0;
+  padding: 10px 12px 22px;
+  background: linear-gradient(#000b, #0000);
+  pointer-events: none;
+}
+.create-node-visual .create-node-content {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+}
+.create-node-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.create-node-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  aspect-ratio: auto !important;
+  background: repeating-conic-gradient(#171d1b 0% 25%, #121816 0% 50%) 0 0 / 16px 16px;
+}
+.create-node-thin .create-node-stage {
+  padding-bottom: 150px;
+}
+.create-node-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.create-node-stage-empty {
+  color: #8ea397;
+  font-size: 12px;
+}
+/* Settings and actions sit over the bottom of the picture, not in a card. */
+.create-node-visual .create-node-footer {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 5px;
+  max-height: 72%;
+  padding: 28px 10px 10px;
+  border-top: 0;
+  overflow-y: auto;
+  background: linear-gradient(#0000, #000d 38%);
+}
+.create-node-visual .create-node-output-settings,
+.create-node-visual .create-node-dimensions {
+  margin-top: 0;
+}
+.create-node-visual .create-node-decision {
+  margin: 0 !important;
+  color: #dbe7de;
+}
+.create-node-visual .create-node-output-actions {
+  margin-top: 0;
+}
+.create-node-visual .create-node-evidence p {
+  margin: 4px 0 0;
+}
+.create-node-visual .create-node-upload {
+  position: relative;
+  width: auto;
+  margin: 0;
+}
+.create-queue {
+  position: absolute;
+  z-index: 8;
+  right: 16px;
+  bottom: 160px;
+  max-height: 180px;
+  max-width: calc(100% - 32px);
+  overflow: auto;
+  list-style: none;
+  padding: 8px 12px;
+  margin: 0;
+  border: 1px solid var(--border, #30383a);
+  border-radius: 8px;
+  background: #141a18;
+  color: #dbe7de;
+  font-size: 12px;
+}
+.create-queue li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.create-queue button {
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  padding: 6px;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Lluna-inspired cards: separate preview, settings and actions; no controls over artwork. */
+.create-node {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #222a29, #171c1e);
+  border-color: #3c4748;
+  box-shadow: 0 12px 32px #0005;
+}
+.create-node-planner {
+  background: linear-gradient(145deg, #272b22, #191e1d);
+  border-color: #59614b;
+}
+.create-node-visual {
+  overflow: visible;
+  padding: 14px;
+}
+.create-node header,
+.create-node-visual header {
+  position: static;
+  padding: 0;
+  min-height: 30px;
+  background: none;
+  pointer-events: auto;
+}
+.create-node header strong {
+  font-size: 14px;
+  font-weight: 650;
+}
+.create-node-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #65755066;
+  border-radius: 9px;
+}
+.create-node-content,
+.create-node-visual .create-node-content {
+  position: relative;
+  inset: auto;
+  height: auto;
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding: 0 2px;
+}
+.create-node-content > p:first-child {
+  margin-top: 0;
+}
+.create-node .create-node-footer,
+.create-node-visual .create-node-footer {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  justify-content: start;
+  align-items: stretch;
+  gap: 8px;
+  max-height: none;
+  overflow: visible;
+  padding: 12px 0 0;
+  border-top: 1px solid #35413f;
+  background: none;
+}
+.create-node-fill {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background: #0e1317;
+  border-radius: 11px;
+}
+.create-node-image .create-node-content {
+  border-radius: 11px;
+  border: 1px solid #384744;
+  background: #0e1317;
+}
+.create-node-stage,
+.create-node-thin .create-node-stage {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  aspect-ratio: auto !important;
+  border-radius: 11px;
+  overflow: hidden;
+}
+/* Fill the stage box exactly; a percentage height alone resolves to auto here, which let tall
+   banners overflow and crop their bottom (legal line) in short format cards. */
+.create-node-stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.create-node-action {
+  min-height: 32px;
+  border-radius: 8px;
+  font-size: 11px;
+  gap: 6px;
+  padding: 7px 9px;
+  font-weight: 600;
+  background: #27332d;
+  color: #bff5ce;
+  border-color: #3b5946;
+}
+.create-node-action-primary,
+.create-node-upload {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+.create-node .create-node-upload {
+  width: 100%;
+  margin: 0;
+}
+.create-node-field,
+.create-model-field {
+  display: grid;
+  gap: 5px;
+  font-size: 11px;
+  color: #b5c4c0;
+  margin: 0 0 10px;
+}
+.create-node-input,
+.create-model-field select,
+.create-node-output-settings select,
+.create-suggestion-controls input,
+.create-suggestion-controls select {
+  width: 100%;
+  min-height: 31px;
+  padding: 6px 8px;
+  border: 1px solid #41504e;
+  border-radius: 7px;
+  background: #11181b;
+  color: #eef4f0;
+  font-size: 12px;
+}
+.create-node-copy {
+  font-size: 12px;
+}
+.create-node p,
+.create-node small {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.create-node-compose-settings {
+  gap: 10px;
+  font-size: 12px;
+}
+.create-node-output .create-node-content {
+  min-height: 155px;
+}
+.create-node-output .create-node-footer {
+  gap: 6px;
+}
+.create-node-output-actions {
+  gap: 6px;
+}
+.create-node-output .create-node-decision {
+  white-space: normal;
+}
+.create-node-port span {
+  display: none;
+}
+.create-node-port-in {
+  transform: translate(-8px, -50%);
+}
+.create-node-port-out {
+  transform: translate(8px, -50%);
+}
+.create-node-port .react-flow__handle {
+  width: 14px;
+  height: 14px;
+  border-color: #a6c8bf;
+  background: #344e48;
+}
+.create-node-port:hover span {
+  display: block;
+  position: absolute;
+  padding: 3px 7px;
+  background: #0d1618;
+  border-radius: 5px;
+  white-space: nowrap;
+  color: #d8eee8;
+}
+.create-node-port-in:hover span {
+  right: 18px;
+  margin: 0;
+}
+.create-node-port-out:hover span {
+  left: 18px;
+  margin: 0;
+}
+.create-suggestions {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+.create-suggestion-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  justify-content: space-between;
+  color: #dce8df;
+  font-size: 12px;
+}
+.create-suggestion-summary span {
+  color: #a7b9b0;
+  font-size: 10px;
+}
+.create-suggestion-card {
+  border: 1px solid #455e50;
+  border-radius: 12px;
+  background: #121b18;
+  padding: 12px;
+}
+.create-suggestion-card.needs-correction {
+  border-color: #9a7744;
+  background: #241e15;
+}
+.create-suggestion-card.needs-approval {
+  border-color: #7b8f5c;
+}
+.create-suggestion-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #f0f4ef;
+  font-size: 13px;
+}
+.create-suggestion-heading span {
+  margin-left: auto;
+  font-size: 10px;
+  color: #a6b7b0;
+}
+.create-suggestion-heading svg {
+  color: #9de3af;
+}
+.create-suggestion-blockers {
+  font-size: 11px;
+  color: #f0cf99;
+}
+.create-suggestion-blockers p {
+  margin: 6px 0;
+  color: #dcc4a2;
+}
+.create-suggestion-card .create-blueprint-map svg {
+  height: 150px;
+}
+.create-workflow-overlay {
+  position: absolute;
+  z-index: 12;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 32px));
+}
+.create-workflow-progress {
+  padding: 12px 15px;
+  background: #111b1ff5;
+  border: 1px solid #41625d;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #0004;
+  color: #def2e8;
+}
+.create-workflow-progress.is-compact {
+  padding: 8px;
+  border-radius: 8px;
+}
+.create-progress-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.create-progress-heading span {
+  flex: 1;
+  min-width: 0;
+}
+.create-progress-heading strong {
+  font-variant-numeric: tabular-nums;
+}
+.create-progress-heading button {
+  border: 0;
+  background: transparent;
+  color: #d7ebe1;
+  cursor: pointer;
+  padding: 3px;
+}
+.create-progress-track {
+  height: 5px;
+  overflow: hidden;
+  background: #293b39;
+  border-radius: 5px;
+  margin: 9px 0 5px;
+}
+.create-progress-track i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+.create-workflow-progress small {
+  display: block;
+  font-size: 10px;
+  color: #9fb8ae;
+  margin: 0;
+}
+.create-spin {
+  animation: create-spin 1s linear infinite;
+}
+@keyframes create-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.create-graph-status {
+  max-width: min(42%, 460px);
+  bottom: 105px;
+}
+@media (max-width: 700px) {
+  .create-workflow-overlay {
+    bottom: 10px;
+  }
+  .create-graph-status {
+    bottom: 112px;
+    max-width: calc(100% - 24px);
+  }
+}
+
+.create-node-image {
+  --node-accent: #8ab9fa;
+}
+.create-node-copy {
+  --node-accent: #be9be8;
+}
+.create-node-analysis {
+  --node-accent: #7bd3bc;
+}
+.create-node-planner {
+  --node-accent: #d1fe88;
+}
+.create-node-compose {
+  --node-accent: #edbd83;
+}
+.create-node-output {
+  --node-accent: #97bdf0;
+}
+.create-node-icon {
+  color: var(--node-accent);
+  border-color: color-mix(in srgb, var(--node-accent) 40%, #34453e);
+  background: color-mix(in srgb, var(--node-accent) 9%, transparent);
+}
+.create-node-tag {
+  font-size: 10px;
+  color: #acbfb6;
+  white-space: nowrap;
+}
+.create-analysis-preview {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border: 1px solid #3b5048;
+  border-radius: 9px;
+  background: #10171b;
+  margin: 10px 0;
+}
+.create-graph-canvas .react-flow__node-create.selected .create-node {
+  border-color: var(--node-accent);
+  box-shadow:
+    0 0 0 1px var(--node-accent),
+    0 12px 30px #0008;
+}
